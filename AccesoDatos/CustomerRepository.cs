@@ -16,5 +16,24 @@ namespace AccesoDatos
 
             return clientes.ToList();
         }
+
+        public Customers ClientePorID(string id)
+        {
+            var resultado = new Customers();
+            var customer = from cliente in contexto.Customers
+                          where cliente.CustomerID == id
+                          select cliente;
+
+            foreach (var i in customer) 
+            {
+                resultado.CustomerID = i.CustomerID;
+                resultado.ContactTitle = i.ContactTitle;
+                resultado.Address = i.Address;
+                resultado.ContactName = i.ContactName;
+                resultado.CompanyName = i.CompanyName;
+            }
+
+            return resultado;
+        }
     }
 }

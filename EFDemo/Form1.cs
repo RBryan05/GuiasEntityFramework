@@ -22,5 +22,23 @@ namespace EFDemo
         {
             dgvClientes.DataSource = _customerRepository.ObtenerTodos();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string id = txtBuscar.Text;
+            Customers cliente = _customerRepository.ClientePorID(id);
+            AsignarATxt(cliente);
+            List<Customers> customer = new List<Customers> { cliente };
+            dgvClientes.DataSource = customer;
+        }
+
+        private void AsignarATxt(Customers customer)
+        {
+            txtCustomerID.Text = customer.CustomerID;
+            txtCompanyName.Text = customer.CompanyName;
+            txtAddres.Text = customer.Address;
+            txtContactName.Text = customer.ContactName;
+            txtContactTitle.Text = customer.ContactTitle;
+        }
     }
 }
