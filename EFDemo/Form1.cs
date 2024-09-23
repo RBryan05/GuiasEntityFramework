@@ -18,7 +18,6 @@ namespace EFDemo
         {
             InitializeComponent();
         }
-
         private void btnCargarDatos_Click(object sender, EventArgs e)
         {
             dgvClientes.DataSource = _customerRepository.ObtenerTodos();

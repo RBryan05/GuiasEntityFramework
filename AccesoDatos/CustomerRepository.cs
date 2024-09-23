@@ -9,7 +9,6 @@ namespace AccesoDatos
     public class CustomerRepository
     {
         public NorthwindEntities contexto = new NorthwindEntities();
-
         public List<Customers> ObtenerTodos()
         {
             var clientes = from customer in contexto.Customers
