@@ -36,7 +36,7 @@ namespace EFDemo
         {
             txtCustomerID.Text = customer.CustomerID;
             txtCompanyName.Text = customer.CompanyName;
-            txtAddres.Text = customer.Address;
+            txtAddress.Text = customer.Address;
             txtContactName.Text = customer.ContactName;
             txtContactTitle.Text = customer.ContactTitle;
         }
@@ -50,14 +50,29 @@ namespace EFDemo
 
         private Customers Cliente()
         {
-            Customers cliente = new Customers();
-            cliente.CustomerID = txtCustomerID.Text;
-            cliente.CompanyName = txtCompanyName.Text;
-            cliente.ContactName = txtContactName.Text;
-            cliente.ContactTitle = txtContactTitle.Text;
-            cliente.Address = txtAddres.Text;
+            Customers cliente = new Customers()
+            {
+                CustomerID = txtCustomerID.Text,
+                CompanyName = txtCompanyName.Text,
+                ContactName = txtContactName.Text,
+                Address = txtAddress.Text,
+                ContactTitle = txtContactTitle.Text,
+            };           
 
             return cliente;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            var cliente = Cliente();
+            _customerRepository.ActualizarCliente(cliente);
+            var resultado = _customerRepository.ClientePorID(cliente.CustomerID);
+
+            if (resultado != null)
+            {
+                List<Customers> lista1 = new List<Customers>{ resultado };
+                dgvClientes .DataSource = lista1;
+            }
         }
     }
 }

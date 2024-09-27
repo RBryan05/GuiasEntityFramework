@@ -36,9 +36,30 @@ namespace AccesoDatos
             return resultado;
         }
 
+        public Customers ObtenerPorID(string id)
+        {
+
+            var clientes = from cm in contexto.Customers where cm.CustomerID == id select cm;
+            return clientes.FirstOrDefault();
+        }
+
         public int InsertarClientes(Customers cliente)
         {
            contexto.Customers.Add(cliente);
+           return contexto.SaveChanges();
+        }
+
+        public int ActualizarCliente(Customers customers)
+        {
+            var registro = ObtenerPorID(customers.CustomerID);
+            if (registro != null)
+            {
+                registro.CustomerID = customers.CustomerID;
+                registro.ContactTitle = customers.ContactTitle;
+                registro.Address = customers.Address;
+                registro.ContactName = customers.ContactName;
+                registro.CompanyName = customers.CompanyName;
+            }
             return contexto.SaveChanges();
         }
     }

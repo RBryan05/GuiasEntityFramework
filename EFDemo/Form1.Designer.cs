@@ -33,7 +33,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.txtAddres = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtContactTitle = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,6 +44,7 @@
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnInsertar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,12 +94,12 @@
             this.txtBuscar.Size = new System.Drawing.Size(142, 26);
             this.txtBuscar.TabIndex = 4;
             // 
-            // txtAddres
+            // txtAddress
             // 
-            this.txtAddres.Location = new System.Drawing.Point(1123, 193);
-            this.txtAddres.Name = "txtAddres";
-            this.txtAddres.Size = new System.Drawing.Size(222, 26);
-            this.txtAddres.TabIndex = 30;
+            this.txtAddress.Location = new System.Drawing.Point(1123, 193);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(222, 26);
+            this.txtAddress.TabIndex = 30;
             // 
             // label7
             // 
@@ -183,13 +184,24 @@
             this.btnInsertar.UseVisualStyleBackColor = true;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(1222, 247);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(123, 38);
+            this.btnActualizar.TabIndex = 32;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1355, 556);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnInsertar);
-            this.Controls.Add(this.txtAddres);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtContactTitle);
             this.Controls.Add(this.label6);
@@ -219,7 +231,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.TextBox txtAddres;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtContactTitle;
         private System.Windows.Forms.Label label6;
@@ -230,6 +242,7 @@
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnInsertar;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }
 
