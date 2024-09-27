@@ -74,5 +74,13 @@ namespace EFDemo
                 dgvClientes .DataSource = lista1;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            string id = txtCustomerID.Text;
+            _customerRepository.EliminarCliente(id);
+          
+            dgvClientes.DataSource = _customerRepository.ObtenerTodos();
+        }
     }
 }

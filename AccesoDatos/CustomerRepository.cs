@@ -62,5 +62,15 @@ namespace AccesoDatos
             }
             return contexto.SaveChanges();
         }
+
+        public int EliminarCliente(string id)
+        {
+            var cliente = ObtenerPorID(id);
+            if (cliente != null)
+            {
+                contexto.Customers.Remove(cliente);
+            }
+            return contexto.SaveChanges();
+        }
     }
 }
