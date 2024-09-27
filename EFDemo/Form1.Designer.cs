@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnInsertar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,9 +105,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(995, 196);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 20);
+            this.label7.Size = new System.Drawing.Size(72, 20);
             this.label7.TabIndex = 29;
-            this.label7.Text = "Address";
+            this.label7.Text = "Address:";
             // 
             // txtContactTitle
             // 
@@ -172,11 +173,22 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "CustomerID";
             // 
+            // btnInsertar
+            // 
+            this.btnInsertar.Location = new System.Drawing.Point(999, 247);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(123, 38);
+            this.btnInsertar.TabIndex = 31;
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1355, 556);
+            this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.txtAddres);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtContactTitle);
@@ -217,6 +229,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnInsertar;
     }
 }
 

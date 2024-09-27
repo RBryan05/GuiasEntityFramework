@@ -40,5 +40,24 @@ namespace EFDemo
             txtContactName.Text = customer.ContactName;
             txtContactTitle.Text = customer.ContactTitle;
         }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            var cliente = Cliente();
+            int insertados = _customerRepository.InsertarClientes(cliente);
+            MessageBox.Show($"Se ha insertado {insertados} cliente.");
+        }
+
+        private Customers Cliente()
+        {
+            Customers cliente = new Customers();
+            cliente.CustomerID = txtCustomerID.Text;
+            cliente.CompanyName = txtCompanyName.Text;
+            cliente.ContactName = txtContactName.Text;
+            cliente.ContactTitle = txtContactTitle.Text;
+            cliente.Address = txtAddres.Text;
+
+            return cliente;
+        }
     }
 }
